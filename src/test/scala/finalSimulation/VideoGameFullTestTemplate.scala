@@ -11,9 +11,9 @@ import scala.util.Random
 
 class VideoGameFullTestTemplate extends Simulation{
 
-  val httpConf = http.baseUrl("http://localhost:8080/app/")
+  val httpConf = http.baseUrl("http://192.168.0.20:8080/app/")
     .header("Accept", "application/json")
-    .proxy(Proxy("localhost", 8866))
+//    .proxy(Proxy("localhost", 8866))
 
   /** Variables */
   //VARS
