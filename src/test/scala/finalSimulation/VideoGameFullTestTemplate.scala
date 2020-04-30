@@ -123,7 +123,12 @@ class VideoGameFullTestTemplate extends Simulation{
       nothingFor(5),
       rampUsers(userCount) during(rampDuration second)
     )
-  ).protocols(httpConf).maxDuration(testDuration)
+  ).protocols(httpConf)
+    .maxDuration(testDuration)
+      .assertions(
+        global.responseTime.max.lt(2),
+        global.successfulRequests.percent.gt(99)
+      )
 
 
   /** Before & After */
